@@ -1,0 +1,26 @@
+{
+  "proyectoPrueba01App": {
+    "breed": {
+      "home": {
+        "title": "Breeds",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Breed",
+        "createOrEditLabel": "Crear o editar Breed",
+        "notFound": "Ningún Breeds encontrado"
+      },
+      "created": "Un nuevo Breed ha sido creado con el identificador {{ param }}",
+      "updated": "Un Breed ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Breed ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Breed {{ id }}?"
+      },
+      "detail": {
+        "title": "Breed"
+      },
+      "id": "ID",
+      "breed": "Breed",
+      "breedType": "Breed Type",
+      "pet": "Pet"
+    }
+  }
+}

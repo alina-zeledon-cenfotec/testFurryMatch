@@ -1,0 +1,91 @@
+
+application {
+  config {
+    baseName ProyectoPrueba01,
+    applicationType monolith,
+    packageName com.prueba01,
+    authenticationType session,
+    devDatabaseType mysql,
+    prodDatabaseType mysql,
+    clientFramework angular,
+    buildTool maven,
+    languages [es]
+  }
+  entities *
+}
+
+enum Sex {
+    Hembra, Macho
+}
+
+enum PetType {
+    Perro, Gato
+}
+
+entity Owner {
+	firstName String required,
+    secondName String,
+    firstLastName String required,
+    secondLastName String required,
+    phoneNumber Long required,
+    photo String,
+    identityNumber String required,
+    adress String required,
+    province String required,
+    canton String required,
+    district String required,
+    email String required,
+    userPassword String required,
+    otp String required,
+    createdAt LocalDate,
+    updatedAt LocalDate,
+}
+
+entity Pet {
+    name String required,
+    petType PetType required,
+    description String required,
+    sex Sex required,
+    tradeMoney Boolean,
+    tradePups Boolean,
+    pedigree Boolean,
+    desireAmmount Double
+}
+
+entity Photo {
+	uploadDate LocalDate required,
+    photoUrl String required
+}
+
+entity Breed {
+	breed String required,
+    breedType String required
+}
+
+entity SearchCriteria {
+    filterType String required,
+    breed String required,
+    tradePups String required,
+    sex Sex required,
+    pedigree String,
+    tradeMoney String,
+    provice String,
+    canton String,
+    district String,
+    objective String
+}
+relationship OneToMany{
+Owner{pet} to Pet{owner}
+}
+relationship OneToMany{
+Pet{photo} to Photo{pet}
+}
+relationship OneToMany{
+Breed{pet} to Pet{breed}
+}
+relationship ManyToOne{
+SearchCriteria{pet} to Pet{searchCriteria}
+}
+paginate Owner,Pet,Photo,Breed, SearchCriteria with pagination
+service Owner,Pet,Photo,Breed, SearchCriteria with serviceClass
+    

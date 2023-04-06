@@ -1,0 +1,9 @@
+{
+  "proyectoPrueba01App": {
+    "PetType": {
+      "null": "",
+      "Perro": "Perro",
+      "Gato": "Gato"
+    }
+  }
+}
